@@ -1,0 +1,24 @@
+
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+body {
+	margin: 2em 2em;
+	background: url('bg.jpg') no-repeat;
+}
+
+#viz-wrapper {
+	text-align: center;
+}
+
+#title {
+
+	margin-top: 10em; 
+}
+
+h1 {
+	line-height: 1.4em;
+}
+select {
+margin-top: 4em; 	
+}
