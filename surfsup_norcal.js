@@ -28,7 +28,7 @@
 	if ( $("#beach option:selected").val() == 'eureka') {
 
 		 $.ajax({
-		  url : "http://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Eureka.json",
+		  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Eureka.json",
 		  dataType : "jsonp",
 		  success : function(parsed_json) {
 		  var location = parsed_json['location']['city'];
@@ -44,7 +44,7 @@
 	}  else if  ( $("#beach option:selected").val() == 'bolinas') {
 
 	 $.ajax({
-	  url : "http://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Bolinas_Beach.json",
+	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Bolinas_Beach.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
 	 	  var location = parsed_json['location']['city'];
