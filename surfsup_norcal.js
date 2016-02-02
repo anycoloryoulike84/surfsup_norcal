@@ -5,6 +5,21 @@
 
 
 
+
+// CONDITIONAL TO FIND BEST SURF CONDITIONS AND DISPLAY RECOMMENDED BEACH DU JOUR
+
+
+// if (weatherCloud == 'Clear' || $(this) == 'bolinas') ) {
+
+// alert('test')
+
+// } else{};
+
+
+
+
+
+
 		
 		// search input
 
@@ -31,14 +46,23 @@
 
 
 	 $.ajax({
-		  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Bolinas_Beach.json",
+		  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Eureka.json",
 		  dataType : "jsonp",
 		  success : function(parsed_json) {
-		var temp_f = parsed_json['current_observation']['temperature_string'];
+		  	
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
 	  
+
 			  	}
 
 			  });
@@ -48,16 +72,25 @@
 
 		
 		 $.ajax({
-		  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Eureka.json",
+		  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Bolinas_Beach.json",
 		  dataType : "jsonp",
 		  success : function(parsed_json) {
-		  	
+		  
 		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
 	  
+
 	  }
+
 
 
 	  });
@@ -70,10 +103,18 @@
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
 	 
-	 	  var temp_f = parsed_json['current_observation']['temperature_string'];
+	 	 
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
 	  }
 	  });
 // CHRONKITE
@@ -84,10 +125,18 @@
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
 	 
-	 var temp_f = parsed_json['current_observation']['temperature_string'];
+	     
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
 	  }
 	  });
 
@@ -99,11 +148,19 @@
 	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Stinson_Beach.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
-		var temp_f = parsed_json['current_observation']['temperature_string'];
+		 
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
 
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
+	  
 	  }
 	  });
 
@@ -115,11 +172,19 @@
 	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Santa_Cruz.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
-	var temp_f = parsed_json['current_observation']['temperature_string'];
+	
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
-	  }
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
+	   }
 	  });
 
 // PACIFICA
@@ -130,11 +195,19 @@
 	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Pacifica.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
-	var temp_f = parsed_json['current_observation']['temperature_string'];
+	
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
-	  }
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
+	   }
 	  });
 
 // HALF MOON BAY
@@ -145,11 +218,19 @@
 	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Half_Moon_Bay.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
-	 var temp_f = parsed_json['current_observation']['temperature_string'];
+	 
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
-	  }
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
+	   }
 	  });
 
 
@@ -159,11 +240,19 @@
 	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Mendocino.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
-	var temp_f = parsed_json['current_observation']['temperature_string'];
+	
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
-	  }
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
+	   }
 	  });
 
 
@@ -173,10 +262,18 @@
 	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Bodega_Bay.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
-	var temp_f = parsed_json['current_observation']['temperature_string'];
+	
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
 	  }
 	  });
 
@@ -187,10 +284,18 @@
 	  url : "https://api.wunderground.com/api/595d000c42bcd508/geolookup/conditions/q/CA/Klamath.json",
 	  dataType : "jsonp",
 	  success : function(parsed_json) {
-	var temp_f = parsed_json['current_observation']['temperature_string'];
+	
+		  var temp_f = parsed_json['current_observation']['temperature_string'];
 		  var wind = parsed_json['current_observation']['wind_string'];
 		  var time = parsed_json['current_observation']['observation_time'];
-		  $('h1').html("<br>Current temperature at " + $("#beach option:selected").text() + " is: " + temp_f + "<br>Wind report: <br>" + wind + "<br><h3>" + time + "</h3>");
+		  var cloudIcon = parsed_json['current_observation']['icon_url'];
+		  var weatherCloud = parsed_json['current_observation']['weather'];
+
+		  $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
 	  }
 	  });
 
