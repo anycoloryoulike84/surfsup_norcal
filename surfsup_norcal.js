@@ -33,12 +33,20 @@
 	// var url2 = "weatherdata.json"
 
 	var value = $( "#beach option:selected" ).text();
-	console.log(value)
+	console.log(value);
 
-
+		
 		$('select').on('change', function(){
 
 	
+
+	function insertText() {
+		        $('h1').html("<br>Current temperature at " 
+		  	+ $("#beach option:selected").text() + " is: " 
+		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
+		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
+		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>") 
+	};
 
 
 // JETTY BEACH
@@ -56,13 +64,7 @@
 		  var cloudIcon = parsed_json['current_observation']['icon_url'];
 		  var weatherCloud = parsed_json['current_observation']['weather'];
 
-		  $('h1').html("<br>Current temperature at " 
-		  	+ $("#beach option:selected").text() + " is: " 
-		  	+ temp_f + "<br><h2>Wind report: </h2>" + wind 
-		  	+ "<br><h3>" + time + "<br>" + "<img src=' " 
-		  	+ cloudIcon + "'/> <br>" + weatherCloud  + "</h3>");
-	  
-
+		 insertText();
 			  	}
 
 			  });
